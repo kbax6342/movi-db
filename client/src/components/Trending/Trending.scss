@@ -1,0 +1,25 @@
+#info{
+    border-color:#1a1b4b !important;
+}
+
+.selected{
+    padding: 10px;
+    background-color: #1a1b4b;
+    color: white;
+
+}
+
+button{
+    font-size: 1.3rem;
+    padding: 0px 10px;
+}
+
+button:focus{
+    
+    font-size: 1.3rem;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #1a1b4b;
+    color: white;
+}
