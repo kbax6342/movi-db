@@ -32,7 +32,7 @@ export const Trending = ({ type }) => {
         'https://api.themoviedb.org/3/trending/movie/week?api_key=' +
           process.env.REACT_APP_API_KEY
       );
-      console.log(res.data.results);
+     
       setweekMovies(res.data.results);
     } catch (err) {
       console.log(err);

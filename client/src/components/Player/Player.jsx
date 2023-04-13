@@ -33,3 +33,4 @@ const Player = ( { you,show, handleClose}) => {
 }
 
 export default Player
+
