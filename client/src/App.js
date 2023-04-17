@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import Home from "./pages/Home/Home"
 import Details from './pages/Details/Details';
 import './App.css';
+import Genre from './pages/Genre/Genre';
 
 const Layout = () => {
   return (
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: '/details/:id',
         element: <Details />,
+      },
+      {
+        path: '/genre/:id',
+        element: <Genre />,
       },
     ],
   },

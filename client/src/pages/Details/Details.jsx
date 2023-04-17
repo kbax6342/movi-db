@@ -8,6 +8,7 @@ import { FaPlayCircle } from 'react-icons/fa';
 import { FaHeart, FaList, FaBookmark, FaStar } from 'react-icons/fa';
 
 const Details = () => {
+  let resYou = ""; 
   const [movies, setmovies] = useState([]);
   const [you, setyou] = useState([]);
   const [videos, setvideos] = useState([]);
@@ -36,21 +37,24 @@ const Details = () => {
         );
 
         setvideos(resYou.data.results);
-        console.log(videos);
+        setmovies(res.data);
+        setyou(resYou.data.results[0].key)
         videos.map((item) =>
-          item.type === 'Trailer'
+          item.type == 'Trailer'
             ? setyou(resYou.data.results[0].key) + setloading(true)
             : setloading(false)
-        );
-        console.log(loading);
-        console.log(you);
-        setmovies(res.data);
+        ); 
+        
       } catch (err) {
         console.log(err);
       }
     };
+    
+    
     getMovie();
-  }, []);
+  }, [true]);
+
+  console.log(you)
   return (
     <div>
       <div className='flex p-5'>
