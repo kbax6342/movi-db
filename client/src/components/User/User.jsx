@@ -8,6 +8,7 @@ const User = ({ visible }) => {
   const [last, setlast] = useState('');
   const [email, setemail] = useState('');
   const [phone, setphone] = useState('');
+  const [password, setPassword] = useState('');
 
   const headers = {
     'Content-Type': 'application/json;charset=UTF-8',
@@ -19,7 +20,7 @@ const User = ({ visible }) => {
       first: first,
       last: last,
       email: email,
-      phone: phone,
+      password: password,
     };
 
     axios

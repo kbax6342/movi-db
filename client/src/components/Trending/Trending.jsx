@@ -67,7 +67,7 @@ export const Trending = ({ type }) => {
             This Week
           </button>
         </div>
-        <div className='flex overflow-x-scroll gap-3 mx-5'>
+        <div className='flex overflow-x-scroll overflow-y-hidden gap-3 pb-5  my-5'>
           {view
             ? movies?.map((item) => (
                 <div key={item.id} className='min-w-fit'>

@@ -21,7 +21,7 @@ const Genre = () => {
     };
 
     getGenre();
-  }, [genre]);
+  }, []);
 
   const handleClick = () => {};
 
@@ -31,8 +31,8 @@ const Genre = () => {
       
         {genre && genre.map((item) => (
             <a href={`/genre/${item.id}`}>
-           <div className='bg-[#5153ba] h-[300px] min-w-[200px] justify-between mr-5 rounded-lg items-center text-center cursor-pointer'>
-            <p className='text-white flex-col  text-2xl font-bold   mt-[50%]'>
+           <div className='bg-[#5153ba] hover:bg-[#1a1b4b] h-[300px] min-w-[200px] justify-between mr-5 rounded-lg items-center text-center cursor-pointer mb-3 scroll-ps-6'>
+            <p className='text-white flex-col  text-2xl font-bold   mt-[50%] flex h-full justify-center'>
                {item.name}
              </p>
            </div>

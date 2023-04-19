@@ -37,14 +37,13 @@ app.get('/api/getFromId/:id', (req, res) => {
 
 // Route for creating the post
 app.post('/api/create', (req, res) => {
-  const firsts = req.body.first;
-  const lasts = req.body.last;
-  const phones = req.body.phone;
+  const name = req.body.name;
+  const passwords = req.body.password;
   const emails = req.body.email;
 
   db.query(
-    'INSERT INTO users (first, last, email,phone) VALUES (?,?,?,?)',
-    [firsts, lasts, emails, phones],
+    'INSERT INTO users (email,name,password) VALUES (?,?,?)',
+    [emails, name, passwords],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -52,7 +51,32 @@ app.post('/api/create', (req, res) => {
       console.log(result);
     }
   );
-  res.sendStatus(200)
+  res.sendStatus(200);
+});
+
+app.post('/api/login', (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+  
+
+  db.query(
+    'SELECT * FROM users WHERE email = ? AND password = ?',
+    [email, password],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        return result.json("Fail")
+      }
+      if(result.length > 0){
+        var values = result[0]
+        console.log(values)
+        return res.status(200).json(values)
+      }else{
+        return res.json("Fail")
+      }
+      })
+      
+    
 });
 
 app.post('/api/like/:id', (req, res) => {

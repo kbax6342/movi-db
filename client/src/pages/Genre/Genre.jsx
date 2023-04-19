@@ -1,6 +1,10 @@
-import React from 'react'
+import React , {useEffect}from 'react'
+import axios from "axios"
+import { useState } from 'react';
+
 
 const Genre = () => {
+  const [loading, setloading] = useState(null)
     useEffect(() => {
         const getGenre = async () => {
           try {
@@ -9,7 +13,7 @@ const Genre = () => {
             );
             
             setloading(false)
-            console.log(genre);
+          
           } catch (err) {
             console.log(err);
           }
